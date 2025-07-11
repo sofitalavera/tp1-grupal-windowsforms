@@ -205,10 +205,9 @@ namespace WinFormsApp1
         {
             if (string.IsNullOrEmpty(cmbUsuarios.Text) || cmbUsuarios.SelectedIndex == 0)
             {
-                MessageBox.Show("Debe ingresar un nombre de usuario.");
+                MessageBox.Show("El campo Usuario es obligatorio (por ejemplo: nombre.apellido).");
                 cmbUsuarios.Focus();
-                return;
-            }
+                return;            }
 
             if (string.IsNullOrEmpty(txtNombre.Text))
             {
