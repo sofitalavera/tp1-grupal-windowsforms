@@ -17,12 +17,23 @@ namespace WinFormsApp1
             InitializeComponent();
         }
 
-        private void cmbUsuarios_SelectedIndexChanged(object sender, EventArgs e)
+        private void LimpiarCampos()
         {
             txtNombre.Clear();
             txtApellido.Clear();
             txtEdad.Clear();
             cmbRol.SelectedIndex = -1;
+        }
+
+
+        private void cmbUsuarios_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //prueba metodo linea 20, limpiar campos
+            //txtNombre.Clear();
+            //txtApellido.Clear();
+            //txtEdad.Clear();
+            //cmbRol.SelectedIndex = -1;
+            LimpiarCampos();
 
             switch (cmbUsuarios.SelectedIndex)
             {
@@ -179,12 +190,15 @@ namespace WinFormsApp1
 
         private void btnAltaUsuario_Click(object sender, EventArgs e)
         {
-            txtNombre.Clear();
-            txtApellido.Clear();
-            txtEdad.Clear();
+            //pruebo método que limpe campos (sustituye 192 a 195)
+            //txtNombre.Clear();
+            //txtApellido.Clear();
+            //txtEdad.Clear();
+            //cmbRol.SelectedIndex = -1;
+            LimpiarCampos();
 
-            cmbUsuarios.SelectedIndex = -1; // no deshabilita el ComboBox de usuarios ya existentes, pero lo hace más intuitivo 
-            cmbRol.SelectedIndex = -1;
+            cmbUsuarios.SelectedIndex = -1; // no deshabilita el ComboBox de usuarios ya existentes, pero lo hace más intuitivo                     
+            
 
             cmbUsuarios.Enabled = true;
             txtNombre.Enabled = true;
@@ -256,10 +270,12 @@ namespace WinFormsApp1
             txtEdad.Enabled = false;
             cmbRol.Enabled = false;
 
-            txtNombre.Clear();
-            txtApellido.Clear();
-            txtEdad.Clear();
-            cmbRol.SelectedIndex = -1;
+            //prueba metodo LimpiarCampos: linea 20
+            //txtNombre.Clear();
+            //txtApellido.Clear();
+            //txtEdad.Clear();
+            //cmbRol.SelectedIndex = -1;
+            LimpiarCampos();
 
             cmbUsuarios.Enabled = true;
             cmbUsuarios.SelectedIndex = 0;
