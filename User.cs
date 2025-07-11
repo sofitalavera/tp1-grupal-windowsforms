@@ -40,6 +40,7 @@ namespace WinFormsApp1
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            
             if (string.IsNullOrEmpty(txtNombre.Text))
             {
                 MessageBox.Show("Completar Nombre");
@@ -58,9 +59,8 @@ namespace WinFormsApp1
                 txtNombre.Focus();
                 return;
             }
-            MessageBox.Show("Sus Datos fueron Modificados Correctamente");
-       
-          
+            
+
             txtNombre.Enabled = true;
             txtEdad.Enabled = true;
             txtApellido.Enabled = true;
@@ -73,7 +73,7 @@ namespace WinFormsApp1
 
         {
             Resultado = MessageBox.Show("¿Esta seguro que desea realizar el cambio?", btnGuardar.Text,
-                MessageBoxButtons.OK,
+                MessageBoxButtons.OKCancel,
                 MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
             if (Resultado == DialogResult.OK)
             {
@@ -81,10 +81,15 @@ namespace WinFormsApp1
             }
             else
             {
-                MessageBox.Show("Los cambios No se guardaron");
+                MessageBox.Show("Los cambios no se guardaron");
                 return;
             }
-
+            txtNombre.Enabled = false;
+            txtEdad.Enabled = false;
+            txtApellido.Enabled = false;
+            txtNombre.ReadOnly = true;
+            txtEdad.ReadOnly = true;
+            txtApellido.ReadOnly = true;
         }
     }
 }

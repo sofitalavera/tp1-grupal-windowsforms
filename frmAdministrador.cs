@@ -88,8 +88,12 @@ namespace WinFormsApp1
 
             if (respuesta == DialogResult.OK)
             {
+                LimpiarCampos();
+                cmbUsuarios.SelectedIndex = 0;
                 MessageBox.Show("Usuario eliminado correctamente (Simulación)");
             }
+            
+
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -200,7 +204,7 @@ namespace WinFormsApp1
             cmbUsuarios.SelectedIndex = -1; // no deshabilita el ComboBox de usuarios ya existentes, pero lo hace más intuitivo                     
             
 
-            cmbUsuarios.Enabled = true;
+            cmbUsuarios.Enabled = false;
             txtNombre.Enabled = true;
             txtApellido.Enabled = true;
             txtEdad.Enabled = true;
