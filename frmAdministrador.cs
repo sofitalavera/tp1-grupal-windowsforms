@@ -182,7 +182,8 @@ namespace WinFormsApp1
             txtNombre.Clear();
             txtApellido.Clear();
             txtEdad.Clear();
-            cmbUsuarios.SelectedIndex = 0;
+
+            cmbUsuarios.SelectedIndex = -1; // no deshabilita el ComboBox de usuarios ya existentes, pero lo hace más intuitivo 
             cmbRol.SelectedIndex = -1;
 
             cmbUsuarios.Enabled = true;
